@@ -7,8 +7,9 @@
     "twitter-scroller": "bin/scroll.js"
   },
   "dependencies": {
-    "chrome-launcher": "^0.10.2",
-    "chrome-remote-interface": "^0.25.5"
+    "chrome-launcher": "^0.12.0",
+    "chrome-remote-interface": "^0.28.0",
+    "global": "^4.4.0"
   },
   "devDependencies": {},
   "scripts": {},

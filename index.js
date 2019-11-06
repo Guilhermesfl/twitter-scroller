@@ -26,9 +26,10 @@ const MAX_PAGE_WAIT = 10000;
 
 async function crawlTweets(Page, username, y, m, d) {
   const url =
-`https://twitter.com/search?f=tweets&q=from%3A${username}%20since%3A\
-${y}-${m}-${d}%20until%3A${y}-${m}-${d + 1}&src=typd`;
-  console.log(`Crawling @${username}'s tweets on ${y}-${m}-${d}...`);
+`https://twitter.com/search?q="jornalismo de dados" OR "jornalismo guiado por dados" OR "jornalismo em bases de dados" OR "jornalista do futuro" OR "repórter do futuro" OR ("futuro" AND "jornalismo" AND "dados") OR ("jornalista do futuro" AND "dados") OR ("habilidades" AND "jornalista" AND "futuro")\
+  until:${y}-${m}-${d + 1} since:${y}-${m}-${d}`;
+  console.log(url);
+  console.log(`Crawling @${username}'s tweets on  ...`);
   await Page.navigate({url});
   await Page.loadEventFired();
   await new Promise(resolve => setTimeout(resolve, MAX_PAGE_WAIT));
